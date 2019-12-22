@@ -141,11 +141,6 @@ abstract class EloquentRepository implements RepositoryInterface
      */
     public function findWhere(array $where, bool $getFirst = false)
     {
-        $query = $this->model->where($where);
-        if ($getFirst) {
-            return $query->first();
-        }
-
-        return $query->get();
+        return $query = $this->model->where($where);
     }
 }
