@@ -1,6 +1,3 @@
-import './form-builder.min';
-import './form-render.min';
-
 // get data json from database
 let data =  $("#form_builder").val();
 let getData = [];
