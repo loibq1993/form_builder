@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Repositories\FormBuilderRepository\FormBuilderRepositoryInterface;
+use App\Repositories\FormBuilderRepository\FormBuilderEloquentRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(
+            FormBuilderRepositoryInterface::class,
+            FormBuilderEloquentRepository::class
+        );
     }
 
     /**
